@@ -1,0 +1,56 @@
+# DnD Dice Selector for Georgie
+in_session = True
+# current weapons for Georgie
+weapons = ['Longbow', 'Shortbow', 'Shortsword', 'Longsword of Fimbrick', 'Dagger']
+
+print("Hello Georgie")
+print()
+
+while in_session:
+    print ("Please select your weapon:")
+    #prints weapon list with index
+    for index, item in enumerate(weapons):
+        print (index + 1, item)
+
+    print()
+    sel = input("Which weapon are you trying to use? ")
+
+    if sel.lower() == 'longbow' or sel.lower() == '1':
+        print()
+        print("Add your dexterity modifier, proficiency bonus, and favored weapon feature to your D20 roll, currently +8")
+        print("Roll a D8 for damage, plus 3")
+    elif sel.lower() == 'shortbow' or sel.lower() == "2":
+        print()
+        print("Add your dexterity modifier, proficiency bonus, and favored weapon feature to your D20 roll, currently +8")
+        print("Roll a D6 for damage, plus 3")
+    elif sel.lower() == 'shortsword' or sel.lower() == "3":
+        print()
+        print("Add your dexterity modifier and proficiency bonus to your D20 roll, currently +6")
+        print("Roll a D6 for damage, plus 3")
+        print("Remember you can use this for an extra attack, unlike ranged weapons. If you have two, you can also get a third strike if double weilding")
+    elif sel.lower() == 'longsword of fimbrick' or sel.lower() == "4":
+        print()
+        print("Add your strength modifier, proficiency bonus, and a +1 (+1 weapon) to your D20 rolls, currently +5")
+        print("Roll a D8 for damage, plus 4")
+        print("Remember you can use this for an extra attack, unlike ranged weapons. This is also a versatile weapon, if you're using this option, roll a D10 for damage instead of a D8 with your added modifiers.")
+    else:
+        # maybe add something to input a new weapon?
+        print()
+        print("Add this later")
+
+    print()
+    combat = input("Are you still in combat? y/n ")
+    print()
+
+    if combat.lower() == 'no' or combat.lower() == 'n':
+        in_session = False
+    elif combat.lower() == "yes" or combat.lower() == "y":
+        in_session = True
+    else:
+        print("... I'll take that as a yes.")
+        print()
+        in_session = True
+        
+        
+    
+    
